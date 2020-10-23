@@ -1,0 +1,88 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 99;
+  height: var(--footer-height);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0 32px;
+  border-top: 1px solid var(--theme-footer-separator);
+  color: var(--theme-footer-text);
+  background: var(--theme-footer-background);
+}
+
+.footer > * {
+  flex: 1;
+}
+
+.footer > *:first-child {
+  display: flex;
+  justify-content: flex-start;
+}
+.footer > *:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  padding: 0 12px;
+}
+.footer > *:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer button {
+  text-align: right;
+  cursor: pointer;
+  background: var(--theme-primary);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 24px;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 75px;
+  padding: 6px;
+  box-sizing: border-box;
+  transition: all .2s ease;
+}
+.footer button:focus, 
+.footer button:active {
+  box-shadow: inset 0 0 0 2px white;
+}
+.footer button:disabled {
+  cursor: auto;
+  opacity: 0.38;
+}
+
+.footer button > span {
+  display: none;
+}
+.footer button > svg {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+@media(min-width: 576px) {
+  .footer {
+    font-size: 24px;
+  }
+  .footer button {
+    width: 100%;
+    max-width: 300px;
+  }
+  .footer button > span {
+    display: inline-block;
+  }
+  .footer button > svg {
+    display: none;
+  }
+}

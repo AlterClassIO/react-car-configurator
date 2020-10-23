@@ -10,6 +10,7 @@ import {
 import './App.css';
 // Components
 import Menu from '../Menu';
+import Footer from '../Footer';
 
 class App extends React.Component {
   state = {
@@ -17,10 +18,6 @@ class App extends React.Component {
     config: null,
     totalPrice: 0
   };
-
-  selectedModel = models.find(model =>
-    model?.key === this.state.config?.model
-  );
 
   steps = [
     {
@@ -88,13 +85,44 @@ class App extends React.Component {
     this.setState({ currentStep: step });
   };
 
+  goToPrevStep = () => {
+    this.setState(prevState => ({
+      currentStep: prevState.currentStep > 0
+        ? prevState.currentStep-1
+        : prevState.currentStep
+    }));
+  };
+
+  goToNextStep = () => {
+    this.setState(prevState => ({
+      currentStep: prevState.currentStep < this.steps.length - 1
+        ? prevState.currentStep+1
+        : prevState.currentStep
+    }));
+  };
+
   render() {
+    const selectedModel = models.find(model =>
+      model?.key === this.state.config?.model
+    );
+
+    const isFirstStep = this.state.currentStep === 0;
+    const isLastStep = this.state.currentStep === this.steps.length - 1;
+
     return (
       <div className="app">
         <Menu
           items={this.steps.map(step => step.name)}
           selectedItem={this.state.currentStep}
           onSelectItem={this.goToStep}
+        />
+        <main className="app-content" />
+        <Footer
+          totalPrice={this.state.totalPrice}
+          disablePrev={isFirstStep}
+          disableNext={isLastStep}
+          onClickPrev={this.goToPrevStep}
+          onClickNext={this.goToNextStep}
         />
       </div>
     );
