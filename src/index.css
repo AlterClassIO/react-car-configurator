@@ -1,0 +1,51 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--theme-text);
+  background: var(--theme-background);
+  transition: all .25s ease-in-out;
+
+  --theme-background: #ffffff;
+  --theme-footer-background: #333;
+  --theme-surface: transparent;
+  --theme-text: #151618;
+  --theme-footer-text: #ffffff;
+  --theme-primary: #c33364;
+  --theme-separator: #dfdfdf;
+  --theme-footer-separator: #333;
+  --theme-border: #ddd;
+  --theme-surface-border: #ddd;
+
+  --theme-active-opacity: 1;
+  --theme-medium-opacity: 0.60;
+  --theme-disabled-opacity: 0.38;
+
+  --theme-drop-shadow: none;
+
+  --menu-height: 67px;
+  --footer-height: 72px;
+}
+
+body.dark-mode {
+  --theme-background: #151618;
+  --theme-footer-background: #151618;
+  --theme-surface: #25282c;
+  --theme-text: #ffffff;
+  --theme-footer-text: #ffffff;
+  --theme-primary: #c33364;
+  --theme-separator: rgba(244,245,246,0.12);
+  --theme-footer-separator: rgba(244,245,246,0.12);
+  --theme-border: #151618;
+  --theme-surface-border: rgba(244,245,246,0.12);
+  --theme-drop-shadow: drop-shadow(0 0 0.75rem var(--theme-primary));
+}

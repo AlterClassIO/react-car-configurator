@@ -1,0 +1,25 @@
+.app {
+  min-width: 100%;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-content {
+  width: 100%;
+  height: calc(100% - var(--menu-height) - var(--footer-height));
+  margin-top: var(--menu-height);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media(min-width: 992px) {
+  .app-content {
+    flex-direction: row;
+    justify-content: center;
+    overflow-y: hidden;
+  }
+}
