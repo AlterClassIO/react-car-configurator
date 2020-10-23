@@ -12,6 +12,7 @@ import './App.css';
 import Menu from '../Menu';
 import Footer from '../Footer';
 import Settings from '../Settings';
+import Summary from '../Summary';
 
 class App extends React.Component {
   state = {
@@ -159,11 +160,21 @@ class App extends React.Component {
           onSelectItem={this.goToStep}
         />
         <main className="app-content">
-          <Settings
-            config={this.state.config}
-            settings={this.steps[this.state.currentStep].settings}
-            onSelectOption={this.handleOnSelectOption}
-          />
+          {
+          isLastStep ? (
+            <Summary
+              config={this.state.config}
+              models={models}
+              totalPrice={this.totalPrice}
+            />
+          ) : (
+            <Settings
+              config={this.state.config}
+              settings={this.steps[this.state.currentStep].settings}
+              onSelectOption={this.handleOnSelectOption}
+            />
+          )
+        }
         </main>
         <Footer
           totalPrice={this.totalPrice}
