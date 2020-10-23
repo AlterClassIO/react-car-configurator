@@ -9,14 +9,26 @@ import {
 // Styles
 import './App.css';
 // Components
-// ...
+import Menu from '../Menu';
 
-function App() {
-  return (
-    <div className="app">
-      React Car Configurator
-    </div>
-  );
-}
+class App extends React.Component {
+  state = {
+    currentStep: 0,
+    config: null,
+    totalPrice: 0
+  };
+
+  render() {
+    return (
+      <div className="app">
+        <Menu
+          items={[]}
+          selectedItem={this.state.currentStep}
+          onSelectItem={null}
+        />
+      </div>
+    );
+  };
+};
 
 export default App;
