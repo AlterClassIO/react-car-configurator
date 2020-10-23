@@ -1,0 +1,179 @@
+.option {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.option > .price {
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.text-option {
+  background: var(--theme-surface);
+  border: 1px solid var(--theme-surface-border);
+  padding: 12px 20px;
+  margin-bottom: 12px;
+  border-radius: 25px;
+  width: 100%;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  transition: all .25s ease-in-out;
+}
+.text-option > span:first-child {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.text-option.active {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 2px var(--theme-primary);
+  font-weight: 500;
+}
+
+.image-option {
+  width: 75px;
+  height: 75px;
+  padding: 8px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: var(--theme-surface);;
+  border: 2px solid var(--theme-surface-border);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-option.active {
+  border: 2px solid var(--theme-primary);
+}
+.image-option > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.color-option {
+  width: 48px;
+  height: 48px;
+  padding: 4px;
+  margin-right: 0px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: transparent;
+  box-sizing: border-box;
+}
+.color-option.active {
+  border: 2px solid var(--theme-primary);
+}
+.color-option > div {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--theme-border);
+  box-sizing: border-box;
+}
+.color-option > div.white {
+  background: white;
+}
+.color-option > div.black {
+  background: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 100%) 0%,
+    hsl(0, 0%, 98.73%) 0.3%,
+    hsl(0, 0%, 95.14%) 1.4%,
+    hsl(0, 0%, 89.6%) 3.2%,
+    hsl(0, 0%, 82.46%) 5.8%,
+    hsl(0, 0%, 74.07%) 9.3%,
+    hsl(0, 0%, 64.8%) 13.6%,
+    hsl(0, 0%, 54.99%) 18.9%,
+    hsl(0, 0%, 45.01%) 25.1%,
+    hsl(0, 0%, 35.2%) 32.4%,
+    hsl(0, 0%, 25.93%) 40.7%,
+    hsl(0, 0%, 17.54%) 50.2%,
+    hsl(0, 0%, 10.4%) 60.8%,
+    hsl(0, 0%, 4.86%) 72.6%,
+    hsl(0, 0%, 1.27%) 85.7%,
+    hsl(0, 0%, 0%) 100%
+  );
+}
+.color-option > div.silver {
+  background: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 100%) 0%,
+    hsl(208.97, 6.61%, 98.9%) 0.3%,
+    hsl(208.97, 6.61%, 95.82%) 1.4%,
+    hsl(208.97, 6.61%, 91.05%) 3.2%,
+    hsl(208.97, 6.61%, 84.9%) 5.8%,
+    hsl(208.97, 6.61%, 77.68%) 9.3%,
+    hsl(208.97, 6.61%, 69.7%) 13.6%,
+    hsl(208.97, 6.61%, 61.26%) 18.9%,
+    hsl(208.97, 6.61%, 52.66%) 25.1%,
+    hsl(208.97, 8.33%, 44.22%) 32.4%,
+    hsl(208.97, 11.62%, 36.24%) 40.7%,
+    hsl(208.97, 16.16%, 29.02%) 50.2%,
+    hsl(208.97, 22.27%, 22.87%) 60.8%,
+    hsl(208.97, 29.88%, 18.1%) 72.6%,
+    hsl(208.97, 37.38%, 15.02%) 85.7%,
+    hsl(208.97, 40.85%, 13.92%) 100%
+  );
+}
+.color-option > div.blue {
+  background: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 100%) 0%,
+    hsl(222.86, 49.12%, 99.15%) 0.3%,
+    hsl(222.86, 49.12%, 96.74%) 1.4%,
+    hsl(222.86, 49.12%, 93.03%) 3.2%,
+    hsl(222.86, 49.12%, 88.24%) 5.8%,
+    hsl(222.86, 49.12%, 82.61%) 9.3%,
+    hsl(222.86, 49.12%, 76.4%) 13.6%,
+    hsl(222.86, 49.12%, 69.82%) 18.9%,
+    hsl(222.86, 49.12%, 63.12%) 25.1%,
+    hsl(222.86, 49.12%, 56.55%) 32.4%,
+    hsl(222.86, 49.12%, 50.33%) 40.7%,
+    hsl(222.86, 60.76%, 44.7%) 50.2%,
+    hsl(222.86, 73.94%, 39.92%) 60.8%,
+    hsl(222.86, 86.58%, 36.2%) 72.6%,
+    hsl(222.86, 96.23%, 33.8%) 85.7%,
+    hsl(222.86, 100%, 32.94%) 100%
+  );
+}
+.color-option > div.red {
+  background: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 100%) 0%,
+    hsl(0, 54.9%, 99.24%) 0.3%,
+    hsl(0, 54.9%, 97.08%) 1.4%,
+    hsl(0, 54.9%, 93.76%) 3.2%,
+    hsl(0, 54.9%, 89.48%) 5.8%,
+    hsl(0, 54.9%, 84.44%) 9.3%,
+    hsl(0, 54.9%, 78.88%) 13.6%,
+    hsl(0, 54.9%, 73%) 18.9%,
+    hsl(0, 54.9%, 67%) 25.1%,
+    hsl(0, 54.9%, 61.12%) 32.4%,
+    hsl(0, 54.9%, 55.56%) 40.7%,
+    hsl(0, 54.9%, 50.52%) 50.2%,
+    hsl(0, 63.83%, 46.24%) 60.8%,
+    hsl(0, 73.03%, 42.92%) 72.6%,
+    hsl(0, 79.78%, 40.76%) 85.7%,
+    hsl(0, 82.35%, 40%) 100%
+  );
+}
+
+@media(min-width: 576px) {
+  .color-option {
+    width: 65px;
+    height: 65px;
+  }
+  .image-option {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media(min-width: 992px) {
+  .text-option {
+    max-width: 300px;
+  }
+}
