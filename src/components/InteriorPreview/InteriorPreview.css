@@ -1,0 +1,26 @@
+.interior-preview {
+  border-right: 1px solid var(--theme-border);
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 50%;
+  max-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.interior-preview > svg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media only screen
+and (orientation: landscape)
+and (max-width: 992px) {
+  .interior-preview {
+    min-height: 100%;
+  }
+}
