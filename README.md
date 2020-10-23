@@ -4,6 +4,10 @@ Starter code for the project in the React Hooks module of the [React course](htt
 
 Follow along with the [classroom](https://classroom.alterclass.io) lessons to complete the project, or attend a live-stream session with your instructor from the [Discord server](https://discord.com/channels/742753758450155662/748890194136137838).
 
+[![React Car Configurator by AlterClass](https://alterclass.s3.eu-west-3.amazonaws.com/react-car-configurator.png)](https://react-car-configurator.netlify.app/)
+
+Check out the live demo of the final result: [https://react-car-configurator.netlify.app/](https://react-car-configurator.netlify.app/).
+
 ## create-react-app
 
 This project uses the popular [create-react-app (CRA)](https://create-react-app.dev/) command to setup a modern React application. This way we can focus on the code itself, and not worry about configuring many build tools. 
@@ -25,7 +29,11 @@ The [package.json](https://github.com/AlterClassIO/react-car-configurator/blob/m
 
 4. Start the app in the development mode: `npm start`
 
+![Compiled successfully!](https://alterclass.s3.eu-west-3.amazonaws.com/react-car-configurator-compiled.png)
+
 5. Open [http://localhost:3000](http://localhost:3000) to view your React application in the browser
+
+![React Car Configurator starting point](https://alterclass.s3.eu-west-3.amazonaws.com/react-car-configurator.png)
 
 6. Follow along with the lesson.
 
