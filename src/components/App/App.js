@@ -13,6 +13,7 @@ import Menu from '../Menu';
 import Footer from '../Footer';
 import Settings from '../Settings';
 import Summary from '../Summary';
+import Preview from '../Preview';
 
 class App extends React.Component {
   state = {
@@ -160,6 +161,13 @@ class App extends React.Component {
           onSelectItem={this.goToStep}
         />
         <main className="app-content">
+          <Preview
+            config={this.state.config}
+            models={models}
+            showAllModels={isFirstStep}
+            showSpecs={!isLastStep}
+            onChangeModel={this.handleChangeModel}
+          />
           {
           isLastStep ? (
             <Summary

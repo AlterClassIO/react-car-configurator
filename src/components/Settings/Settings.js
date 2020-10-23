@@ -6,103 +6,96 @@ import './Settings.css';
 // Components
 import Option from '../Option';
 
-class Settings extends React.Component {
-  state = {
-    selectedOptions: this.props?.settings?.reduce(
-      (acc, setting) => ({
-        ...acc,
-        [setting.prop]: setting.options.find(option =>
-          option.value === this.props?.config[setting.prop]
-        ) ?? []
-      }), {})
-  };
+const Settings = ({
+  config = null,
+  settings = null,
+  onSelectOption = () => null
+}) => {
 
-  handleOnSelectOption = (option, setting) => {
-    this.setState(prevState => ({
-      selectedOptions: {
-        ...prevState.selectedOptions,
-        [setting.prop]: option
-      }
-    }));
-    this.props.onSelectOption(setting.prop, option.value);
-  };
+  const selectedOptions = settings?.reduce(
+    (acc, setting) => ({
+      ...acc,
+      [setting.prop]: setting.options.find(option =>
+        option.value === config[setting.prop]
+      ) ?? []
+    }),
+    {}
+  );
 
-  render() {
-    return (
-      <div className="settings">
-        {
-          this.props?.settings?.map(setting => {
-            if (!setting.options || setting.options.length === 0) {
-              return null;
-            }
-            return (
-              <div
-                key={setting.label}
-                className="settings-group"
-              >
-                <h3>{setting.label}</h3>
+  return (
+    <div className="settings">
+      {
+        settings?.map(setting => {
+          if (!setting.options || setting.options.length === 0) {
+            return null;
+          }
+          return (
+            <div
+              key={setting.label}
+              className="settings-group"
+            >
+              <h3>{setting.label}</h3>
+              {
+                setting.disclaimer_1 ? (
+                  <p className="settings-group-disclaimer">
+                    {setting.disclaimer_1}
+                  </p>
+                ) : null
+              }
+              <div className={`settings-options settings-options-${setting.type}`}>
                 {
-                  setting.disclaimer_1 ? (
-                    <p className="settings-group-disclaimer">
-                      {setting.disclaimer_1}
-                    </p>
-                  ) : null
-                }
-                <div className={`settings-options settings-options-${setting.type}`}>
-                  {
-                    setting.options.map(option => (
-                      <Option
-                        {...option}
-                        key={option.value}
-                        type={setting.type}
-                        price={formatPrice(option.price)}
-                        active={this.props?.config?.[setting.prop] === option.value}
-                        onSelectOption={() =>
-                          this.handleOnSelectOption(option, setting)
-                        }
-                      />
-                    ))
-                  }
-                </div>
-                {
-                  setting.type !== "text" ? (
-                    <div className="settings-group-label">
-                      <span>{this.state.selectedOptions?.[setting.prop]?.label}</span>
-                      <span className="price">
-                        {formatPrice(this.state.selectedOptions?.[setting.prop]?.price)}
-                      </span>
-                    </div>
-                  ) : null
-                }
-                {
-                  this.state.selectedOptions?.[setting.prop]?.benefits ? (
-                    <div className="settings-group-benefits">
-                      <p>Model {this.props.config.model.toUpperCase()} {this.state.selectedOptions[setting.prop].label} includes:</p>
-                      <ul>
-                        {
-                          this.state.selectedOptions?.[setting.prop]?.benefits?.map((benefit, i) => (
-                            <li key={i}>
-                              {benefit}
-                            </li>
-                          ))
-                        }
-                      </ul>
-                    </div>
-                  ) : null
-                }
-                {
-                  setting.disclaimer_2 ? (
-                    <p className="settings-group-disclaimer">
-                      {setting.disclaimer_2}
-                    </p>
-                  ) : null
+                  setting.options.map(option => (
+                    <Option
+                      {...option}
+                      key={option.value}
+                      type={setting.type}
+                      price={formatPrice(option.price)}
+                      active={config?.[setting.prop] === option.value}
+                      onSelectOption={(value) =>
+                        onSelectOption(setting.prop, value)
+                      }
+                    />
+                  ))
                 }
               </div>
-          )})
-        }
-      </div>
-    );
-  };
+              {
+                setting.type !== "text" ? (
+                  <div className="settings-group-label">
+                    <span>{selectedOptions?.[setting.prop]?.label}</span>
+                    <span className="price">
+                      {formatPrice(selectedOptions?.[setting.prop]?.price)}
+                    </span>
+                  </div>
+                ) : null
+              }
+              {
+                selectedOptions?.[setting.prop]?.benefits ? (
+                  <div className="settings-group-benefits">
+                    <p>Model {config.model.toUpperCase()} {selectedOptions[setting.prop].label} includes:</p>
+                    <ul>
+                      {
+                        selectedOptions?.[setting.prop]?.benefits?.map((benefit, i) => (
+                          <li key={i}>
+                            {benefit}
+                          </li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                ) : null
+              }
+              {
+                setting.disclaimer_2 ? (
+                  <p className="settings-group-disclaimer">
+                    {setting.disclaimer_2}
+                  </p>
+                ) : null
+              }
+            </div>
+        )})
+      }
+    </div>
+  );
 };
 
 Settings.propTypes = {
