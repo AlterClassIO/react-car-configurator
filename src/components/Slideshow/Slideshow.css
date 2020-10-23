@@ -15,6 +15,7 @@
   width: 100%;
   max-height: 100%;
   overflow: hidden;
+  user-select: none;
 }
 .slideshow .arrow {
   display: none;
@@ -25,7 +26,6 @@
   border: solid transparent;
   border-width: 0 0 2rem 2rem;
   cursor: pointer;
-  user-select: none;
   opacity: .45;
   transition: all .2s ease-in-out;
 }

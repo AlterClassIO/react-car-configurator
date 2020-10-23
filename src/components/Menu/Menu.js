@@ -2,9 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // Styles
 import './Menu.css';
+// Icons
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 class Menu extends React.Component {
   render() {
+    const darkMode = false;
+
+    const ModeIcon = darkMode ? FaSun : FaMoon;
+
+    const brandLogo = darkMode
+    ? `${process.env.PUBLIC_URL}/logo_white.svg`
+    : `${process.env.PUBLIC_URL}/logo.svg`;
+
     return (
       <div className="menu-container">
         <a
@@ -12,7 +22,7 @@ class Menu extends React.Component {
           className="logo"
         >
           <img
-            src={`${process.env.PUBLIC_URL}/logo.svg`}
+            src={brandLogo}
             alt="AlterClass"
           />
         </a>
@@ -29,6 +39,10 @@ class Menu extends React.Component {
             ))
           }
         </ul>
+        <ModeIcon
+          className="mode-icon"
+          onClick={() => null}
+        />
       </div>
     );
   };

@@ -111,19 +111,21 @@ class App extends React.Component {
   };
 
   goToPrevStep = () => {
-    this.setState(prevState => ({
-      currentStep: prevState.currentStep > 0
+    this.setState(prevState => {
+      const newStep = prevState.currentStep > 0
         ? prevState.currentStep-1
-        : prevState.currentStep
-    }));
+        : prevState.currentStep;
+      return { currentStep: newStep };
+    });
   };
 
   goToNextStep = () => {
-    this.setState(prevState => ({
-      currentStep: prevState.currentStep < this.steps.length - 1
+    this.setState(prevState => {
+      const newStep = prevState.currentStep < this.steps.length - 1
         ? prevState.currentStep+1
-        : prevState.currentStep
-    }));
+        : prevState.currentStep;
+      return { currentStep: newStep };
+    });
   };
 
   handleChangeModel = (model) => {
