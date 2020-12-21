@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 // Styles
 import './InteriorPreview.css';
 
+/*
+ * DONE: Nothing to refactor!
+ * 
+ */ 
 const InteriorPreview = ({ interior = null }) => {
   return (
     <div className="interior-preview">
