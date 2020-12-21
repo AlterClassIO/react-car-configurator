@@ -7,7 +7,11 @@ import './Footer.css';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 
 /*
- * DONE: Nothing to refactor!
+ * TODO
+ *
+ * Requirements:
+ * - use React hooks if needed
+ * - use performance optimization if needed
  * 
  */ 
 const Footer = ({
