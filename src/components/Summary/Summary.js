@@ -4,6 +4,14 @@ import { formatPrice } from '../../utils';
 // Styles
 import './Summary.css';
 
+/*
+ * TODO
+ *
+ * Requirements:
+ * - use React hooks if needed
+ * - use performance optimization if needed
+ * 
+ */ 
 const Summary = ({
   config = null,
   models = null,
