@@ -10,6 +10,17 @@ import Summary from '../Summary';
 import Preview from '../Preview';
 import InteriorPreview from '../InteriorPreview';
 
+/*
+ * TODO: Refactor App as a functional component
+ *
+ * Requirements:
+ * - Compute total price using React hooks only when config or selectedModel change 
+ * - Create a custom hook to use localStorage to store the current step and config
+ * - Switch from setState to the useLocalStorage hook
+ * - Use function closures instead of this for callbacks and event handlers
+ * - App logic and behavior should remain the same
+ * 
+ */ 
 class App extends React.Component {
   state = {
     currentStep: 0,
