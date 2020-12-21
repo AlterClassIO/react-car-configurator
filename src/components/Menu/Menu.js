@@ -5,10 +5,29 @@ import './Menu.css';
 // Icons
 import { FaMoon, FaSun } from 'react-icons/fa';
 
+/*
+ * TODO: Refactor Menu as a functional component
+ *
+ * Requirements:
+ * - Create a custom hook to implement dark mode named useDarkMode
+ * - Switch from setState to the useDarkMode hook
+ * - Use function closures instead of this for callbacks and event handlers
+ * - Menu logic and behavior should remain the same
+ * 
+ */ 
 class Menu extends React.Component {
-  render() {
-    const darkMode = false;
+  state = {
+    darkMode: false
+  };
 
+  handleOnChangeMode = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      darkMode: !prevState.darkMode
+    });
+  };
+    
+  render() {
     const ModeIcon = darkMode ? FaSun : FaMoon;
 
     const brandLogo = darkMode
@@ -41,7 +60,7 @@ class Menu extends React.Component {
         </ul>
         <ModeIcon
           className="mode-icon"
-          onClick={() => null}
+          onClick={handleOnChangeMode}
         />
       </div>
     );
