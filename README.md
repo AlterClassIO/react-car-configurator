@@ -33,7 +33,7 @@ The [package.json](https://github.com/AlterClassIO/react-car-configurator/blob/m
 
 5. Open [http://localhost:3000](http://localhost:3000) to view your React application in the browser
 
-![React Car Configurator starting point](https://alterclass.s3.eu-west-3.amazonaws.com/react-car-configurator.png)
+![React Car Configurator starting point](https://alterclass.s3.eu-west-3.amazonaws.com/react-car-configurator-starting-point.png)
 
 6. Follow along with the lesson.
 
