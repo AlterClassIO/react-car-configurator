@@ -6,6 +6,10 @@ import './Footer.css';
 // Icons
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 
+/*
+ * DONE: Nothing to refactor!
+ * 
+ */ 
 const Footer = ({
   totalPrice = 0,
   disablePrev = true,
