@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 // Styles
 import './InteriorPreview.css';
 
+/*
+ * TODO
+ *
+ * Requirements:
+ * - use React hooks if needed
+ * - use performance optimization if needed
+ * 
+ */  
 const InteriorPreview = ({ interior = null }) => {
   return (
     <div className="interior-preview">

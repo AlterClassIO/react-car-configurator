@@ -6,6 +6,15 @@ import './Settings.css';
 // Components
 import Option from '../Option';
 
+/*
+ * TODO: Refactor Editor to leverage React hooks
+ *
+ * Requirements:
+ * - store selectedOptions in React state using the useState hook 
+ * - initialize state using lazy initialization
+ * - use other React hooks if needed
+ * 
+ */ 
 const Settings = ({
   config = null,
   settings = null,

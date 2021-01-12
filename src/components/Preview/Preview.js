@@ -5,6 +5,15 @@ import './Preview.css';
 // Components
 import Slideshow from '../Slideshow';
 
+/*
+ * TODO: Refactor Preview as a functional component
+ *
+ * Requirements:
+ * - Use React hooks if necessary
+ * - Use function closures instead of this for callbacks and event handlers
+ * - Preview logic and behavior should remain the same
+ * 
+ */ 
 class Preview extends React.Component {
   get index() {
     return this.props?.models.findIndex(model => 
