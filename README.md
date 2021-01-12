@@ -21,7 +21,7 @@ The [package.json](https://github.com/AlterClassIO/react-car-configurator/blob/m
 
 ## Instructions
 
-1. Clone the project repository: `git clone https://github.com/AlterClassIO/react-car-configurator
+1. Clone the project repository: `git clone https://github.com/AlterClassIO/react-car-configurator`
 
 2. Navigate to the project folder: `cd react-car-configurator`
 
