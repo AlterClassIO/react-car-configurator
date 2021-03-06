@@ -13,64 +13,53 @@ import { FaMoon, FaSun } from 'react-icons/fa';
  * - Switch from setState to the useDarkMode hook
  * - Use function closures instead of this for callbacks and event handlers
  * - Menu logic and behavior should remain the same
- * 
- */ 
+ *
+ */
 class Menu extends React.Component {
   state = {
-    darkMode: false
+    darkMode: false,
   };
 
   handleOnChangeMode = () => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       ...prevState,
-      darkMode: !prevState.darkMode
-    });
+      darkMode: !prevState.darkMode,
+    }));
   };
-    
-  render() {
-    const ModeIcon = darkMode ? FaSun : FaMoon;
 
-    const brandLogo = darkMode
-    ? `${process.env.PUBLIC_URL}/logo_white.svg`
-    : `${process.env.PUBLIC_URL}/logo.svg`;
+  render() {
+    const ModeIcon = this.state.darkMode ? FaSun : FaMoon;
+
+    const brandLogo = this.state.darkMode
+      ? `${process.env.PUBLIC_URL}/logo_white.svg`
+      : `${process.env.PUBLIC_URL}/logo.svg`;
 
     return (
       <div className="menu-container">
-        <a
-          href="https://alterclass.io/courses/react"
-          className="logo"
-        >
-          <img
-            src={brandLogo}
-            alt="AlterClass"
-          />
+        <a href="https://alterclass.io/courses/react" className="logo">
+          <img src={brandLogo} alt="AlterClass" />
         </a>
         <ul className="menu-nav">
-          {
-            this.props.items.map((item, i) => (
-              <li
-                key={item}
-                onClick={() => this.props.onSelectItem(i)}
-                className={this.props.selectedItem === i ? 'selected' : null}
-              >
-                <h2>{item}</h2>
-              </li>
-            ))
-          }
+          {this.props.items.map((item, i) => (
+            <li
+              key={item}
+              onClick={() => this.props.onSelectItem(i)}
+              className={this.props.selectedItem === i ? 'selected' : null}
+            >
+              <h2>{item}</h2>
+            </li>
+          ))}
         </ul>
-        <ModeIcon
-          className="mode-icon"
-          onClick={handleOnChangeMode}
-        />
+        <ModeIcon className="mode-icon" onClick={this.handleOnChangeMode} />
       </div>
     );
-  };
-};
+  }
+}
 
 Menu.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string),
   selectedItem: PropTypes.number,
-  onSelectItem: PropTypes.func
+  onSelectItem: PropTypes.func,
 };
 
 export default Menu;
